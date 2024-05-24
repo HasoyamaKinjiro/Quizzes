@@ -36,8 +36,9 @@ const Home = () => {
 
     return (
         <div>
-            <div>
+            <div className="flex justify-center">
                 <input
+                    className="w-1/3 h-10 px-4 mt-1 rounded-md border border-gray-500 focus:outline-none focus:border-emerald-400"
                     type="text"
                     placeholder="Search quizzes..."
                     value={searchQuery}
