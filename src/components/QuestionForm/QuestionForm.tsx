@@ -49,7 +49,6 @@ const QuestionForm = ({ question, index }: QuestionFromProps) => {
             ...quizCreate,
             questions: updatedQuestions
         }))
-        console.log(quizCreate.questions[index].answers)
     }
 
     const deleteQuestion = () => {

@@ -35,22 +35,30 @@ const QuizCard = ({ quiz, index }: QuizCardI) => {
 
 
     return (
-        <div className="relative w-full flex justify-center items-center bg-emerald-100 border border-solid border-gray-600 rounded-md">
+        <div
+            className="relative w-full flex justify-center items-center bg-emerald-100 border border-solid border-gray-600 rounded-md"
+            onClick={quizNav}
+        >
             <button
                 className="absolute top-1 left-3 px-1 bg-emerald-400 rounded-md"
-                onClick={() => editNav(quiz.id)}
+                onClick={(e) => {
+                    e.stopPropagation()
+                    editNav(quiz.id)
+                }}
             >
                 Edit
             </button>
             <div
                 className="text-lg font-medium"
-                onClick={quizNav}
             >
                 {quiz.title}
             </div>
             <button
                 className="absolute top-1 right-3 px-1 bg-red-600 rounded-md text-white"
-                onClick={deleteQuiz}
+                onClick={(e) => {
+                    e.stopPropagation()
+                    deleteQuiz()
+                }}
             >
                 Delete
             </button>
